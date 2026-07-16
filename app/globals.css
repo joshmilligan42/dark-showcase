@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-void: #05080f;
+  --color-panel: #0b1120;
+  --color-frost: #e8edf6;
+  --color-dim: #94a3b8;
+  --color-pulse: #38bdf8;
+  --color-volt: #8b5cf6;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-display: var(--font-grotesk);
+  --font-sans: var(--font-inter);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --animate-marquee: marquee 32s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-void text-frost font-sans antialiased;
+  /* Reveal animations slide in from ±40px; never let that widen the page */
+  overflow-x: clip;
+}
+
+::selection {
+  @apply bg-pulse/30;
+}
+
+.eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.3em] text-pulse;
+}
+
+.text-gradient {
+  background: linear-gradient(92deg, #38bdf8 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

@@ -1,0 +1,10 @@
+All photography via Unsplash (unsplash.com/license) — free to use, attribution appreciated.
+
+hero.jpg     | Photo by Cash Macanaya on Unsplash   | https://unsplash.com/photos/ykO7Nb5pQt8
+humanoid.jpg | Photo by Franck V. on Unsplash       | https://unsplash.com/photos/JjGXjESMxOY
+robot-bw.jpg | Photo by Xu Haiwei on Unsplash       | https://unsplash.com/photos/fv1EFjgIb94 (currently unused spare)
+arm.jpg      | Photo by ZHENYU LUO on Unsplash      | https://unsplash.com/photos/kE0JmtbvXxM
+arm-blue.jpg | Photo by Homa Appliances on Unsplash | https://unsplash.com/photos/sz1CHL7Pky0
+drone.jpg    | Photo by Goh Rhy Yan on Unsplash     | https://unsplash.com/photos/p_5BnqHfz3Y
+figure.jpg   | Photo by Maximalfocus on Unsplash    | https://unsplash.com/photos/naSAHDWRNbQ
+android.jpg  | Photo by Cash Macanaya on Unsplash   | https://unsplash.com/photos/TBikX7r2pKA
