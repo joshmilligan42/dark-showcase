@@ -33,8 +33,19 @@ const features = [
 
 export default function Technology() {
   return (
-    <section id="technology" className="scroll-mt-20 bg-panel/40 py-24 md:py-32">
-      <div className="mx-auto max-w-6xl space-y-24 px-5 md:px-8">
+    <section
+      id="technology"
+      className="relative scroll-mt-20 overflow-hidden bg-panel/40 py-24 md:py-32"
+    >
+      <div
+        aria-hidden
+        className="absolute -left-40 top-10 h-96 w-96 rounded-full bg-pulse/[0.07] blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="absolute -right-40 bottom-10 h-96 w-96 rounded-full bg-volt/[0.08] blur-3xl"
+      />
+      <div className="relative mx-auto max-w-6xl space-y-24 px-5 md:px-8">
         {features.map((feature, i) => {
           const reversed = i % 2 === 1;
           return (

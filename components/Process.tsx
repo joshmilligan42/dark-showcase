@@ -30,8 +30,15 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="scroll-mt-20 bg-panel/40 py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
+    <section
+      id="process"
+      className="relative scroll-mt-20 overflow-hidden bg-panel/40 py-24 md:py-32"
+    >
+      <div
+        aria-hidden
+        className="absolute -right-44 top-16 h-[26rem] w-[26rem] rounded-full bg-pulse/[0.06] blur-3xl"
+      />
+      <div className="relative mx-auto max-w-6xl px-5 md:px-8">
         <Reveal className="max-w-xl">
           <p className="eyebrow">Process</p>
           <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight md:text-5xl">

@@ -31,6 +31,12 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
+      <div
+        aria-hidden
+        className={`absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-pulse/40 to-transparent transition-opacity duration-300 ${
+          scrolled && !open ? "opacity-100" : "opacity-0"
+        }`}
+      />
       <div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-5 md:px-8">
         <Link href="#" className="flex items-center gap-2.5">
           <span className="relative flex h-2.5 w-2.5">

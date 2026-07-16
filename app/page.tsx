@@ -3,6 +3,8 @@ import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
 import TrustedBy from "@/components/TrustedBy";
 import Marquee from "@/components/Marquee";
+import Showcase from "@/components/Showcase";
+import FloatingTalk from "@/components/FloatingTalk";
 import Platforms from "@/components/Platforms";
 import Technology from "@/components/Technology";
 import Specs from "@/components/Specs";
@@ -18,12 +20,14 @@ export default function Home() {
       <StatsBar />
       <TrustedBy />
       <Marquee />
+      <Showcase />
       <Platforms />
       <Technology />
       <Specs />
       <Process />
       <Cta />
       <Footer />
+      <FloatingTalk />
     </main>
   );
 }

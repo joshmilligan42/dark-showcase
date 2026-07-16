@@ -12,7 +12,9 @@
   --font-sans: var(--font-inter);
 
   --animate-marquee: marquee 32s linear infinite;
+  --animate-marquee-rev: marquee-rev 38s linear infinite;
   --animate-spin-slow: spin 9s linear infinite;
+  --animate-gradient-pan: gradient-pan 7s ease-in-out infinite;
 
   @keyframes marquee {
     from {
@@ -20,6 +22,25 @@
     }
     to {
       transform: translateX(-50%);
+    }
+  }
+
+  @keyframes marquee-rev {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes gradient-pan {
+    0%,
+    100% {
+      background-position: 0% center;
+    }
+    50% {
+      background-position: 100% center;
     }
   }
 }
@@ -63,6 +84,22 @@ body::after {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Animated variant — the gradient slowly pans through the headline */
+.text-gradient-pan {
+  background: linear-gradient(92deg, #38bdf8, #8b5cf6, #38bdf8);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: var(--animate-gradient-pan);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-gradient-pan {
+    animation: none;
+  }
 }
 
 /* Dot-grid texture (fade it with a mask-image utility at the call site) */

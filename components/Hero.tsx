@@ -8,7 +8,13 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { Check, ChevronDown } from "lucide-react";
+
+const assurances = [
+  "Safety-rated control",
+  "24/7 fleet support",
+  "Service in 12 countries",
+];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 26 },
@@ -81,14 +87,14 @@ export default function Hero() {
           </motion.p>
 
           <motion.h1
-            className="mt-6 font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl"
+            className="mt-6 font-display text-5xl font-semibold leading-[1.04] tracking-tight md:text-7xl xl:text-8xl"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             custom={1}
           >
             Robots built for the{" "}
-            <span className="text-gradient">real world</span>
+            <span className="text-gradient-pan">real world</span>
           </motion.h1>
 
           <motion.p
@@ -123,6 +129,21 @@ export default function Hero() {
               Explore platforms
             </a>
           </motion.div>
+
+          <motion.ul
+            className="mt-9 flex flex-wrap gap-x-7 gap-y-2.5 text-xs text-dim"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={4}
+          >
+            {assurances.map((assurance) => (
+              <li key={assurance} className="flex items-center gap-2">
+                <Check size={13} strokeWidth={3} className="text-pulse" />
+                {assurance}
+              </li>
+            ))}
+          </motion.ul>
         </div>
       </div>
 
