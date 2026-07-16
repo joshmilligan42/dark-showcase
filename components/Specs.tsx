@@ -28,10 +28,12 @@ export default function Specs() {
               <thead>
                 <tr className="border-b border-white/8 bg-panel">
                   <th className="px-6 py-4 font-medium text-dim">Spec</th>
-                  {columns.map((column) => (
+                  {columns.map((column, i) => (
                     <th
                       key={column}
-                      className="px-6 py-4 font-display font-semibold tracking-wide text-frost"
+                      className={`px-6 py-4 font-display font-semibold tracking-wide text-frost ${
+                        i === 0 ? "bg-pulse/[0.06]" : ""
+                      }`}
                     >
                       {column}
                     </th>
@@ -46,7 +48,12 @@ export default function Specs() {
                   >
                     <td className="px-6 py-4 text-dim">{row.label}</td>
                     {row.values.map((value, i) => (
-                      <td key={i} className="px-6 py-4 text-frost/90">
+                      <td
+                        key={i}
+                        className={`px-6 py-4 text-frost/90 ${
+                          i === 0 ? "bg-pulse/[0.04]" : ""
+                        }`}
+                      >
                         {value}
                       </td>
                     ))}

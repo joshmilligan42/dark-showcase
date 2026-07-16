@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import Reveal from "./Reveal";
+import SpotlightCard from "./SpotlightCard";
 
 const platforms = [
   {
@@ -54,8 +55,9 @@ export default function Platforms() {
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {platforms.map((platform, i) => (
-            <Reveal key={platform.model} delay={i * 0.08}>
-              <article className="group relative h-full overflow-hidden rounded-2xl border border-white/8 bg-panel transition-colors duration-300 hover:border-pulse/40">
+            <Reveal key={platform.model} delay={i * 0.08} className="h-full">
+              <SpotlightCard>
+                <article className="gradient-border group relative h-full overflow-hidden rounded-2xl">
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <Image
                     src={platform.image}
@@ -91,7 +93,8 @@ export default function Platforms() {
                     ))}
                   </div>
                 </div>
-              </article>
+                </article>
+              </SpotlightCard>
             </Reveal>
           ))}
         </div>

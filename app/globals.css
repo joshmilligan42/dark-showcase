@@ -12,6 +12,7 @@
   --font-sans: var(--font-inter);
 
   --animate-marquee: marquee 32s linear infinite;
+  --animate-spin-slow: spin 9s linear infinite;
 
   @keyframes marquee {
     from {
@@ -33,12 +34,28 @@ body {
   overflow-x: clip;
 }
 
+/* Film grain over the whole page — kills gradient banding, adds depth */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
 ::selection {
   @apply bg-pulse/30;
 }
 
 .eyebrow {
-  @apply text-xs font-semibold uppercase tracking-[0.3em] text-pulse;
+  @apply inline-flex items-center gap-2 rounded-full border border-pulse/25 bg-panel/70 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-pulse backdrop-blur;
+}
+
+.eyebrow::before {
+  content: "";
+  @apply h-1.5 w-1.5 rounded-full bg-pulse;
 }
 
 .text-gradient {
@@ -46,4 +63,33 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Dot-grid texture (fade it with a mask-image utility at the call site) */
+.bg-dots {
+  background-image: radial-gradient(
+    rgba(148, 163, 184, 0.22) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+}
+
+/* Gradient border card — panel fill, pulse→volt 1px ring that brightens on hover */
+.gradient-border {
+  --gb: 0.22;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--color-panel), var(--color-panel)) padding-box,
+    linear-gradient(
+        135deg,
+        rgba(56, 189, 248, var(--gb)),
+        rgba(139, 92, 246, var(--gb))
+      )
+      border-box;
+  transition: box-shadow 0.3s ease;
+}
+
+.gradient-border:hover {
+  --gb: 0.6;
+  box-shadow: 0 0 44px -12px rgba(56, 189, 248, 0.45);
 }

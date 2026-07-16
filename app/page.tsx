@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
+import TrustedBy from "@/components/TrustedBy";
 import Marquee from "@/components/Marquee";
 import Platforms from "@/components/Platforms";
 import Technology from "@/components/Technology";
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <StatsBar />
+      <TrustedBy />
       <Marquee />
       <Platforms />
       <Technology />

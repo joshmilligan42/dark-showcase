@@ -11,7 +11,13 @@ export default function Cta() {
     <section id="contact" className="scroll-mt-20 py-24 md:py-32">
       <div className="mx-auto max-w-4xl px-5 md:px-8">
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-panel p-10 md:p-16">
+          <div className="relative overflow-hidden rounded-3xl p-px">
+            {/* Slow-rotating conic highlight tracing the panel border */}
+            <div
+              aria-hidden
+              className="absolute -inset-[150%] animate-spin-slow bg-[conic-gradient(from_0deg,transparent_0deg,rgba(56,189,248,0.65)_30deg,rgba(139,92,246,0.65)_60deg,transparent_100deg)] motion-reduce:animate-none"
+            />
+            <div className="relative overflow-hidden rounded-[calc(1.5rem-1px)] bg-panel p-10 md:p-16">
             <div
               aria-hidden
               className="absolute -right-32 -top-32 h-72 w-72 rounded-full bg-pulse/15 blur-3xl"
@@ -64,6 +70,7 @@ export default function Cta() {
               <p className="mt-4 text-xs text-dim">
                 Demo form — no data is sent or stored.
               </p>
+            </div>
             </div>
           </div>
         </Reveal>

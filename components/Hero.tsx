@@ -53,6 +53,21 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-void via-void/80 to-void/20" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-void to-transparent" />
 
+      {/* Dot-grid texture, fading out toward the edges */}
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-dots [mask-image:radial-gradient(ellipse_65%_55%_at_40%_45%,black,transparent)]"
+      />
+      {/* Horizon glow rising from the hero's lower edge */}
+      <div
+        aria-hidden
+        className="absolute -bottom-44 left-1/2 h-72 w-[140%] -translate-x-1/2 rounded-[100%] bg-gradient-to-r from-pulse/20 via-volt/25 to-pulse/20 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-x-10 bottom-0 h-px bg-gradient-to-r from-transparent via-pulse/50 to-transparent"
+      />
+
       <div className="relative mx-auto w-full max-w-6xl px-5 pb-24 pt-36 md:px-8">
         <div className="max-w-2xl">
           <motion.p
